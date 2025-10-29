@@ -11,7 +11,7 @@ from sklearn.metrics import confusion_matrix, precision_score, f1_score, recall_
 sns.set(style='white')
 
 # Load Data
-dataset = pd.read_csv(r'E:\Nit_work\CICD_PIPELINE\iris.csv')
+dataset = pd.read_csv('iris.csv')
 
 # Feature names (Ensure no extra spaces or parentheses)
 dataset.columns = [colname.strip(' (cm)').replace(" ", "_") for colname in dataset.columns.tolist()]
@@ -134,4 +134,5 @@ with open('scores.txt', "w") as score:
     score.write("Logistic Regression Test Var: %2.1f%%\n" % test_acc_lr)
     score.write("F1 Score: %2.1f%%\n" % f1_lr)
     score.write("Recall Score: %2.1f%%\n" % recall_lr)
+
     score.write("Precision Score: %2.1f%%\n" % prec_lr)
